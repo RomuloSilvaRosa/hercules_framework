@@ -1,0 +1,2 @@
+class HerculesException(Exception):
+    pass
