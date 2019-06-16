@@ -1,6 +1,7 @@
 
 ## [0.0.1] - 16-06-19 - HP-8
 **Author**
+
 Romulo Rosa - romulothiago@furg.br
 
 ### Changes
