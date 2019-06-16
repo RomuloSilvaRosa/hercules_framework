@@ -1,0 +1,12 @@
+--index-url http://10.97.39.171/ --trusted-host=10.97.39.171
+python-dateutil==2.7.5
+python-decouple==3.1
+redis==3.0.1
+tornado==5.1.1
+boto3==1.9.86
+boto3-type-annotations==0.3.0
+stringcase==1.2.0
+elastic-apm==3.0.4
+dataslots==1.0.1
+autoslot==2018.8.1
+parse==1.12.0
