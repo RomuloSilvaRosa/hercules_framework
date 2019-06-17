@@ -18,10 +18,10 @@ INSTALL_REQUIRES_DEV = ['coverage>=4.4.1', 'colour_runner>=0.0.5', 'flake8>=3.3.
 
 
 setuptools.setup(
-    name='hercules-framework',
+    name='hercules_framework',
     version=hercules_framework.__version__,
 
-    url='https://github.com/romulosilvarosa/hercules-framework',
+    url='https://github.com/romulosilvarosa/hercules_framework',
     description='Biblioteca de ferramentas do projeto Hercules.',
     long_description=long_description(),
 
