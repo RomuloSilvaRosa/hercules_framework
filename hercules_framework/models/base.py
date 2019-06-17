@@ -1,6 +1,5 @@
 from datetime import datetime
 from typing import Any, Callable, List, Type, TypeVar, cast
-
 import dateutil.parser
 from stringcase import camelcase, snakecase
 
@@ -42,7 +41,7 @@ T = TypeVar("T")
 
 
 def from_int(x: Any) -> int:
-    return int(float(x)) if x else None
+    return int(float(x)) if x else 0
 
 
 def from_float(x: Any) -> float:
@@ -68,7 +67,7 @@ def from_bool(x: Any) -> bool:
 
 def from_list(f: Callable[[Any], T], x: Any) -> List[T]:
 
-    return [f(y) for y in x]
+    return [f(y) for y in x] if x is not None else []
 
 
 def from_datetime(x: Any) -> datetime:

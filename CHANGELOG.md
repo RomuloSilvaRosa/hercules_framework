@@ -14,3 +14,11 @@ Romulo Rosa - romulothiago@furg.br
 - Add exceptions
 - Add test runner
 - Add setup
+
+## [0.0.2] - 17-06-19 - HP-9
+**Author**
+
+Romulo Rosa - romulothiago@furg.br
+
+### Changes
+- Add talkers

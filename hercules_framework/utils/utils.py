@@ -25,12 +25,12 @@ def get_mock_parameters(function, **kwargs):
             post_process = None
             typ = sig.parameters.get(item).annotation
             if typ is inspect._empty:
-                typ = None
+                typ=None
             elif typ is datetime.datetime:
-                typ = datetime.datetime.now
+                typ=datetime.datetime.now
             elif typ is UUID:
-                typ = uuid4
-                post_process = str
+                typ=uuid4
+                post_process=str
             try:
                 try:
                     kwargs[item] = typ()
@@ -58,7 +58,7 @@ def supress_log(f):
     return wrapper
 
 
-def disable_logs(log_names: List[str] = []) -> None:
+def disable_logs(log_names: List[str]=[]) -> None:
     filtered_logs = []
     log_keys = logging.Logger.manager.loggerDict.keys()
     if len(log_names) == 0:
