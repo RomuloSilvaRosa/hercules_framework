@@ -11,7 +11,7 @@ def long_description():
 
 INSTALL_REQUIRES = ['python-dateutil==2.7.5', 'python-decouple==3.1', 'redis==3.0.1',
                     'tornado==5.1.1', 'boto3==1.9.86', 'boto3-type-annotations==0.3.0',
-                    'stringcase==1.2.0', 'elastic-apm==3.0.4', 'dataslots==1.0.1']
+                    'stringcase==1.2.0', 'elastic-apm==3.0.4', 'dataslots==1.0.1', 'requests==2.*']
 INSTALL_REQUIRES_DEV = ['coverage>=4.4.1', 'colour_runner>=0.0.5', 'flake8>=3.3.0',
                         'xmlrunner==1.7.7', 'coverage-badge>=0.2.0', 'flake8-html>=0.4.0',
                         'pylint>=1.9.2', 'anybadge==1.1.1', 'bandit==1.5.1']
