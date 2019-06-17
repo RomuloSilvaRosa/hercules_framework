@@ -61,7 +61,7 @@ CRUD_ORDER_HOST = config('CRUD_ORDER_HOST', default='http://localhost:4424')
 
 class RecordType:
     priority = 'priority'
-    priority = 'order'
+    order = 'order'
 
 
 __all__ = get_all(locals())
