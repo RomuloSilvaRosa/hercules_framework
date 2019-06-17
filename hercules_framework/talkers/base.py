@@ -1,9 +1,11 @@
 from typing import Union
 
 import requests
+from hercules_framework.models.crud_response import BaseModel, CRUDResponse
 from requests import Response
 
-from hercules_framework.models.crud_response import BaseModel, CRUDResponse
+session = requests.Session()
+session.trust_env = False
 
 
 class BaseTalker:
@@ -15,7 +17,7 @@ class BaseTalker:
     def get(self, id: str, header: dict = {}, first=True) -> Union[BaseModel, None]:
         header.update(self._base_header)
         url = '/'.join([self.host, self.base_url, str(id)])
-        response: Response = requests.get(url=url + '?limit=1', headers=header)
+        response: Response = session.get(url=url + '?limit=1', headers=header)
         json_response = response.json()
         if json_response is not None:
             resp = CRUDResponse.from_dict(json_response, self.model).data
@@ -27,6 +29,6 @@ class BaseTalker:
     def put(self, body: dict, header: dict = {}) -> int:
         header.update(self._base_header)
         url = '/'.join([self.host, self.base_url])
-        response: Response = requests.post(url=url, json=body, headers=header)
+        response: Response = session.post(url=url, json=body, headers=header)
         return response.status_code
 
