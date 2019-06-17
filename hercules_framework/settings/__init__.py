@@ -34,7 +34,7 @@ def config(config_name, default=None, cast=None, private=False):
 
 
 DEBUG_MODE = config('DEBUG', default=False)
-
+OUT_FOLDER = config('OUT_FOLDER', default='out/')
 FIREHOSE_ROLE = config('FIREHOSE_ROLE')
 ENABLE_STREAM = config('ENABLE_STREAM', default=False)
 KINESIS_FIREHOSE_STREAM_DATA_NAME = config('KINESIS_FIREHOSE_STREAM_DATA_NAME',
@@ -58,7 +58,9 @@ CRUD_SELLER_HOST = config('CRUD_SELLER_HOST', default='http://localhost:4422')
 CRUD_CLIENT_HOST = config('CRUD_CLIENT_HOST', default='http://localhost:4423')
 CRUD_ORDER_HOST = config('CRUD_ORDER_HOST', default='http://localhost:4424')
 
+
 class RecordType:
     priority = 'priority'
+
 
 __all__ = get_all(locals())

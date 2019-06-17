@@ -5,16 +5,17 @@ from boto3_type_annotations.firehose import Client
 from botocore.session import get_session
 
 from hercules_framework.settings import (ENABLE_STREAM, FIREHOSE_ROLE,
-                                         KINESIS_FIREHOSE_STREAM_DATA_NAME)
+                                         KINESIS_FIREHOSE_STREAM_DATA_NAME,OUT_FOLDER)
 from hercules_framework.utils import datenow
-
+from hercules_framework.utils.mkdir_p import mkdir_p
 
 class FakeStream:
     """Fake Stream to help local tests
     """
 
     def put_record(self, *args, **kwargs):
-        with open(KINESIS_FIREHOSE_STREAM_DATA_NAME + '.dms', 'a+') as file:
+        mkdir_p(OUT_FOLDER)
+        with open(OUT_FOLDER + KINESIS_FIREHOSE_STREAM_DATA_NAME + '.dms', 'a+') as file:
             file.write(kwargs.get('Record', {}).get('Data'))
 
 
