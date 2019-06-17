@@ -7,7 +7,7 @@ from flask import jsonify, request
 from flask.wrappers import Response
 
 from hercules_framework.models.response import Response
-from hercules_framework.security.jwt_auth import JwTAuth
+from hercules_framework.jwt.jwt_auth import JwTAuth
 
 
 def log_body(function):

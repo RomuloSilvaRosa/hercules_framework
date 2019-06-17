@@ -2,7 +2,7 @@ from functools import wraps
 
 from hercules_framework.exceptions.auth import AuthException
 from hercules_framework.handlers import BaseHandler
-from hercules_framework.security.jwt_auth import JwTAuth
+from hercules_framework.jwt.jwt_auth import JwTAuth
 
 
 def tornado_auth_token_required(func):
