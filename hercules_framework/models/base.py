@@ -45,7 +45,7 @@ def from_int(x: Any) -> int:
 
 
 def from_float(x: Any) -> float:
-    return float(x)
+    return float(x) if x else float(0)
 
 
 def to_float(x: Any) -> float:

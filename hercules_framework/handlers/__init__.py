@@ -16,7 +16,6 @@ from hercules_framework.exceptions.base import HerculesException
 class BaseHandler(tornado.web.RequestHandler):
     # Dict with client's data coming from request
     request_body = {}
-    json_schema_model = None
     json_schema_model: str = None
     logger = None
 
