@@ -4,7 +4,6 @@ from http import HTTPStatus
 from typing import Dict, List, Union
 
 import tornado.web
-# import sys; import hercules_framework; sys.path.insert(0, hercules_framework.settings.APP_FOLDER)  # NOQA
 from jsonschema import validate
 from jsonschema.exceptions import ValidationError as JsonValidationError
 
@@ -90,8 +89,8 @@ class BaseHandler(tornado.web.RequestHandler):
                     each_item) for each_item in value]
         return args
 
-    def send_response(self, message: str=None, data: dict = None,
-                      description: str="Ok", code: int=HTTPStatus.OK):
+    def send_response(self, message: str = None, data: dict = None,
+                      description: str = "Ok", code: int = HTTPStatus.OK):
         if not isinstance(data, dict) and data:
             if issubclass(type(data), BaseModel):
                 data: BaseModel
